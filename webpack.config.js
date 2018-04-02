@@ -2,10 +2,14 @@ const path = require('path');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
 
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js', '.jsx' ]
+    extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
+    alias: {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat',
+    }
   },
 
   module: {

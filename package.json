@@ -10,9 +10,15 @@
   "author": "mcpower",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "^16.1.0",
+    "@types/react-dom": "^16.0.4",
     "awesome-typescript-loader": "^4.0.1",
     "typescript": "^2.8.1",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13"
+  },
+  "dependencies": {
+    "preact": "^8.2.7",
+    "preact-compat": "^3.18.0"
   }
 }
