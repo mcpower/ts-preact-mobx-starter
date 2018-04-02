@@ -10,6 +10,8 @@
   "author": "mcpower",
   "license": "ISC",
   "devDependencies": {
+    "awesome-typescript-loader": "^4.0.1",
+    "typescript": "^2.8.1",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13"
   }
