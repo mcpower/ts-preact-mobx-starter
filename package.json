@@ -14,6 +14,7 @@
     "@types/react-dom": "^16.0.4",
     "awesome-typescript-loader": "^4.0.1",
     "typescript": "^2.8.1",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13"
   },

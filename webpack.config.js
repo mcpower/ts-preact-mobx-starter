@@ -1,5 +1,6 @@
 const path = require('path');
 const { CheckerPlugin } = require('awesome-typescript-loader');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   entry: './src/index.tsx',
@@ -25,6 +26,19 @@ module.exports = {
   plugins: [
     new CheckerPlugin()
   ],
+
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          compress: {
+              // https://github.com/developit/preact/issues/961
+              reduce_vars: false
+          }
+        },
+      })
+    ]
+  },
   
   output: {
     filename: 'bundle.js',
