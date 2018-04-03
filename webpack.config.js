@@ -8,6 +8,8 @@ module.exports = function (env) {
   return {
     entry: './src/index.tsx',
 
+    devtool: 'inline-source-map',
+
     resolve: {
       extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
       alias: {
@@ -54,6 +56,7 @@ module.exports = function (env) {
                 reduce_vars: false
             }
           },
+          sourceMap: true
         })
       ]
     },
