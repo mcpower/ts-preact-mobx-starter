@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
     "build": "webpack"
   },
   "author": "mcpower",
@@ -12,7 +14,7 @@
   "devDependencies": {
     "@types/react": "^16.1.0",
     "@types/react-dom": "^16.0.4",
-    "awesome-typescript-loader": "^4.0.1",
+    "awesome-typescript-loader": "5.0.0-1",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.2.0",
@@ -21,7 +23,8 @@
     "typings-for-css-modules-loader": "^1.7.0",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13"
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
     "preact": "^8.2.7",

@@ -9,6 +9,9 @@ module.exports = function (env) {
     entry: './src/index.tsx',
 
     devtool: 'inline-source-map',
+    devServer: {
+      contentBase: "./dist"
+    },
 
     resolve: {
       extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
