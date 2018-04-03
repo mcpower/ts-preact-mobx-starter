@@ -2,6 +2,7 @@ const path = require('path');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = function (env) {
   return {
@@ -37,6 +38,7 @@ module.exports = function (env) {
     },
 
     plugins: [
+      new CleanWebpackPlugin(["dist"]),
       new CheckerPlugin(),
       new HtmlWebpackPlugin({
         title: "Hello World!"
