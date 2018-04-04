@@ -3,14 +3,16 @@ const { CheckerPlugin } = require('awesome-typescript-loader');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = function (env) {
   return {
     entry: './src/index.tsx',
 
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     devServer: {
-      contentBase: "./dist"
+      contentBase: "./dist",
+      hot: true
     },
 
     resolve: {
@@ -47,7 +49,9 @@ module.exports = function (env) {
       new CheckerPlugin(),
       new HtmlWebpackPlugin({
         title: "Hello World!"
-      })
+      }),
+      new webpack.NamedModulesPlugin(),
+      new webpack.HotModuleReplacementPlugin()
     ],
 
     optimization: {
@@ -67,6 +71,8 @@ module.exports = function (env) {
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist')
-    }
+    },
+
+    mode: "development"
   };
 }
