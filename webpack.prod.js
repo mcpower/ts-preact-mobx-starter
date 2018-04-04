@@ -28,6 +28,8 @@ module.exports = function (env) {
       })
     ],
 
+    node: false,
+
     mode: "production"
   });
 }
