@@ -1,5 +1,5 @@
 import React from "react";
-import * as style from "../style.css";
+import * as style from "./style.css";
 
 export default class Example extends React.Component<{}, {}> {
   render() {
