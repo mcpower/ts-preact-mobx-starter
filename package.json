@@ -31,6 +31,7 @@
   "dependencies": {
     "@types/webpack-env": "^1.13.5",
     "preact": "^8.2.7",
-    "preact-compat": "^3.18.0"
+    "preact-compat": "^3.18.0",
+    "proptypes": "^1.1.0"
   }
 }

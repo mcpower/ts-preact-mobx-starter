@@ -13,6 +13,7 @@ module.exports = {
     alias: {
       'react': 'preact-compat',
       'react-dom': 'preact-compat',
+      'prop-types': 'proptypes/disabled'
     }
   },
 
