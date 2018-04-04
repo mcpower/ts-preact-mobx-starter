@@ -2,6 +2,7 @@ const path = require('path');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 module.exports = {
@@ -28,10 +29,10 @@ module.exports = {
         include: [
           path.resolve(__dirname, "src")
         ],
-        use: [
-          'style-loader',
-          'typings-for-css-modules-loader?modules&namedExport&camelCase&minimize'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'typings-for-css-modules-loader?modules&namedExport&camelCase&minimize'
+        })
       }
     ]
   },
@@ -39,6 +40,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["dist"]),
     new CheckerPlugin(),
+    new ExtractTextPlugin("styles.css"),
     new HtmlWebpackPlugin({
       title: "Hello World!"
     })
