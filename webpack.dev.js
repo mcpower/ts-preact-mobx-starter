@@ -13,7 +13,9 @@ module.exports = function (env) {
     },
 
     plugins: [
-      new ForkTsCheckerWebpackPlugin(),
+      new ForkTsCheckerWebpackPlugin({
+        tslint: true
+      }),
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin()
     ],
