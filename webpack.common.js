@@ -51,7 +51,15 @@ module.exports = {
     new CleanWebpackPlugin(["build/*.*"]),
     new ExtractTextPlugin("styles.[contenthash:hex:5].css"),
     new HtmlWebpackPlugin({
-      title: "Hello World!"
+      title: "Hello World!",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        html5: true,
+        minifyCSS: true,
+        removeComments: true,
+        removeEmptyAttributes: true
+      }
     })
   ],
 
