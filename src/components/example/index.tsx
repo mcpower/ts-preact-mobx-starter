@@ -1,7 +1,8 @@
 import ExampleStore from "classes/example-store";
 import * as mobx from "mobx";
-import { inject, observer, Observer } from "mobx-react";
+import { inject, observer } from "mobx-react";
 import React from "react";
+import ObjectObserver from "../object-observer";
 import * as style from "./style.css";
 
 interface IExampleProps {
@@ -12,8 +13,8 @@ interface IExampleProps {
 export default class Example extends React.Component<IExampleProps> {
   constructor(props: IExampleProps) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
   }
+
   public render() {
     const store = this.props.store;
 
@@ -21,13 +22,21 @@ export default class Example extends React.Component<IExampleProps> {
       <div>
         <input onChange={this.handleChange} />
         <div className={style.hello}>Hello world! Some stats:</div>
-        <div>Number of digits in string: <Observer>{() => store.numberOfDigits}</Observer></div>
-        <div>First digit of the above: <Observer>{() => store.firstDigitOfNumberOfDigits}</Observer></div>
+        <div>Number of digits in string: <ObjectObserver render={this.getNumberOfDigits} /></div>
+        <div>First digit of the above: <ObjectObserver render={this.getFirstDigitOfNumberOfDigits} /></div>
       </div>
     );
   }
 
-  public handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  public handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.props.store.inputString = e.target.value;
+  }
+
+  private getNumberOfDigits = () => {
+    return this.props.store.numberOfDigits;
+  }
+
+  private getFirstDigitOfNumberOfDigits = () => {
+    return this.props.store.firstDigitOfNumberOfDigits;
   }
 }
