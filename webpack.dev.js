@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = function (env) {
   return merge(common, {
-    devtool: 'source-map',
+    devtool: 'cheap-module-eval-source-map',
     devServer: {
       contentBase: "./dist",
       hot: true
