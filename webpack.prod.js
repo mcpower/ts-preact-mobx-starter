@@ -14,7 +14,34 @@ module.exports = function (env) {
           uglifyOptions: {
             compress: {
                 // https://github.com/developit/preact/issues/961
-                reduce_vars: false
+                reduce_vars: false,
+                // properties: true,
+                keep_fargs: false,
+                pure_getters: true,
+                // collapse_vars: true,
+                // warnings: false,
+                // ie8: false,
+                // sequences: true,
+                // dead_code: true,
+                // drop_debugger: true,
+                // comparisons: true,
+                // conditionals: true,
+                evaluate: true,
+                // booleans: true,
+                // loops: true,
+                // unused: true,
+                hoist_funs: true,
+                // if_return: true,
+                // join_vars: true,
+                // drop_console: false,
+                pure_funcs: [
+                  'classCallCheck',
+                  '_classCallCheck',
+                  '_possibleConstructorReturn',
+                  'Object.freeze',
+                  'invariant',
+                  'warning'
+                ]
             }
           },
           sourceMap: true
