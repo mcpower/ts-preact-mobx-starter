@@ -8,7 +8,7 @@ module.exports = function (env) {
   return merge(common, {
     devtool: 'cheap-module-eval-source-map',
     devServer: {
-      contentBase: "./dist",
+      contentBase: "./build",
       hot: true
     },
 

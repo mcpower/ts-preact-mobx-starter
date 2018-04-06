@@ -48,7 +48,7 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(["dist"]),
+    new CleanWebpackPlugin(["build/*.*"]),
     new ExtractTextPlugin("styles.css"),
     new HtmlWebpackPlugin({
       title: "Hello World!"
@@ -57,7 +57,7 @@ module.exports = {
 
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'build')
   }
 };
 
