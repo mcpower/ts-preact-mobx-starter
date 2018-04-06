@@ -50,6 +50,8 @@ module.exports = function (env) {
     },
 
     plugins: [
+      new webpack.optimize.ModuleConcatenationPlugin(),
+      new webpack.LoaderOptionsPlugin({ minimize:true }),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       })
