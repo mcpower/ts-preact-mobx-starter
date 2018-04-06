@@ -60,7 +60,7 @@ module.exports = function (env) {
     node: false,
 
     output: {
-      filename: '[name].[chunkhash].js'
+      filename: '[name].[chunkhash:5].js'
     },
 
     mode: "production"
