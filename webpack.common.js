@@ -41,7 +41,7 @@ module.exports = {
         ],
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'typings-for-css-modules-loader?modules&namedExport&camelCase&minimize'
+          use: 'typings-for-css-modules-loader?modules&namedExport&camelCase&minimize&localIdentName=[hash:base64:5]'
         })
       }
     ]
@@ -49,7 +49,7 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(["build/*.*"]),
-    new ExtractTextPlugin("styles.css"),
+    new ExtractTextPlugin("styles.[contenthash:hex:5].css"),
     new HtmlWebpackPlugin({
       title: "Hello World!"
     })
