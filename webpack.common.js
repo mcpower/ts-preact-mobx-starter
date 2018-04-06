@@ -20,7 +20,11 @@ module.exports = {
     rules: [
       {
         test: /\.[tj]sx?$/,
-        use: 'ts-loader',
+        loader: 'ts-loader',
+        options: {
+          // will be checked in dev with fork plugin
+          transpileOnly: true
+        },
         exclude: /node_modules/
       },
 
