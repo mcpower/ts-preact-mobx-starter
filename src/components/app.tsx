@@ -1,8 +1,16 @@
+import RootStore from "classes/root-store";
+import { observer } from "mobx-react";
 import React from "react";
 import Example from "./example";
 
-export default class App extends React.Component<{}, {}> {
+interface IAppProps {
+  store: RootStore;
+}
+
+@observer
+export default class App extends React.Component<IAppProps> {
   public render() {
-    return <Example />;
+    const store = this.props.store;
+    return <Example store={store.exampleStore}/>;
   }
 }
