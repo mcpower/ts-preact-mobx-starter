@@ -59,6 +59,10 @@ module.exports = function (env) {
 
     node: false,
 
+    output: {
+      filename: '[name].[chunkhash].js'
+    },
+
     mode: "production"
   });
 }
