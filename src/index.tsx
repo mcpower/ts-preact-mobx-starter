@@ -9,8 +9,7 @@ if (process.env.NODE_ENV !== "production") {
   require("preact/debug");
   if (module.hot) {
     module.hot.accept("./components/app", () => {
-      const interopDefault = (m: any) => m && m.default ? m.default : m;
-      const ReloadedApp = interopDefault(require("./components/app"));
+      const ReloadedApp = require("./components/app").default;
       render(<ReloadedApp store={rootStore} />, document.body);
     });
   }
