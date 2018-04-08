@@ -12,6 +12,9 @@ configure({
 if (process.env.NODE_ENV !== "production") {
   // tslint:disable-next-line:no-var-requires
   require("preact/debug");
+  // tslint:disable-next-line:no-var-requires
+  (window as any).runInAction = require("mobx").runInAction;
+  (window as any).rootStore = rootStore;
   if (module.hot) {
     module.hot.accept("./components/app", () => {
       const ReloadedApp = require("./components/app").default;
