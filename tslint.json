@@ -5,6 +5,8 @@
     "tslint-react"
   ],
   "jsRules": {},
-  "rules": {},
+  "rules": {
+    "no-var-requires": false
+  },
   "rulesDirectory": []
 }

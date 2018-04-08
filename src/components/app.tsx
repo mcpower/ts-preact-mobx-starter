@@ -1,7 +1,6 @@
 import RootStore from "classes/root-store";
 let DevTools: any;
 if (process.env.NODE_ENV !== "production") {
-  // tslint:disable-next-line:no-var-requires
   DevTools = require("mobx-react-devtools").default;
 }
 import React from "react";
