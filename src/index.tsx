@@ -1,8 +1,13 @@
 import RootStore from "classes/root-store";
 import App from "components/app";
+import { configure } from "mobx";
 import React, { render } from "react-dom";
 
 const rootStore = new RootStore();
+
+configure({
+  enforceActions: true,
+});
 
 if (process.env.NODE_ENV !== "production") {
   // tslint:disable-next-line:no-var-requires

@@ -1,5 +1,5 @@
 import ExampleStore from "classes/example-store";
-import * as mobx from "mobx";
+import { action } from "mobx";
 import { inject, observer } from "mobx-react";
 import React from "react";
 import ObjectObserver from "../object-observer";
@@ -28,6 +28,7 @@ export default class Example extends React.Component<IExampleProps> {
     );
   }
 
+  @action
   public handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.props.store.inputString = e.target.value;
   }
