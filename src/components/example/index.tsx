@@ -1,6 +1,6 @@
 import ExampleStore from "classes/example-store";
 import { action } from "mobx";
-import { inject, observer } from "mobx-react";
+import { inject, observer, Observer } from "mobx-react";
 import React from "react";
 import ObjectObserver from "../object-observer";
 import * as style from "./style.css";
@@ -20,7 +20,7 @@ export default class Example extends React.Component<IExampleProps> {
 
     return (
       <div>
-        <input onChange={this.handleChange} />
+        <Observer render={this.getInputBox} />
         <div className={style.hello}>Hello world! Some stats:</div>
         <div>Number of digits in string: <ObjectObserver render={this.getNumberOfDigits} /></div>
         <div>First digit of the above: <ObjectObserver render={this.getFirstDigitOfNumberOfDigits} /></div>
@@ -31,6 +31,10 @@ export default class Example extends React.Component<IExampleProps> {
   @action
   public handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.props.store.inputString = e.target.value;
+  }
+
+  private getInputBox = () => {
+    return <input onChange={this.handleChange} value={this.props.store.inputString} />;
   }
 
   private getNumberOfDigits = () => {
